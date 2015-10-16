@@ -2,16 +2,15 @@
   <div class="container navbar-wagon-container">
 
     <a href="">
-      <%= image_tag "logo.png" %>
+      <%= image_tag "drinks12.png" %>
     </a>
 
     <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search for featured stuff">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Cocktail, Ingredient...">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
     </form>
-    <hr>
-    <%= link_to t(".top_call_to_action", default: "Create a Cocktail"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Create a Cocktail"), new_cocktail_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 </nav>

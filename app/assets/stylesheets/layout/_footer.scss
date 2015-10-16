@@ -1,1 +1,34 @@
-// Your footer style
+footer {
+  background: #807E7F;
+  padding: 10px;
+  color: #FFF;
+}
+
+.social-links a{
+  color: #D23333;
+  font-size: 20px;
+}
+
+.social-links a:hover {
+  color: #FFF;
+  transition: all 1s;
+  text-decoration: none;
+}
+
+.credits,
+.social-links {
+  display: inline-block;
+}
+
+.social-links li {
+  margin: 5px;
+}
+
+.credits {
+  float: right;
+  line-height: 30px;
+}
+
+.credits .fa {
+  color: #D23333;
+}
