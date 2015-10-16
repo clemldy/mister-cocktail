@@ -1,25 +1,27 @@
 <h1 class= 'text-center'><%=@cocktail.name %>'s Recipe</h1>
 <br>
-<h2 class= 'text-center'>Description :</h2>
-<br>
-<p class= 'text-center'><%= link_to 'Home', cocktails_path, {class: "btn btn-primary"} %></p>
-
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-  <li><%= dose.description %>
-    <%=dose.ingredient.name %>
-  </li>
-  <% end %>
-</ul>
-
 <div class= 'container'>
+  <%= image_tag @cocktail.picture.url(:medium) %>
+  <h2>Description :</h2>
+  <br>
+  <ul>
+    <% @cocktail.doses.each do |dose| %>
+    <li>
+      <p><%= dose.description %></p>
+      <p><%= dose.ingredient.name %></p>
+    </li>
+    <% end %>
+  </ul>
+
   <%= simple_form_for([@cocktail, @dose]) do |f| %>
   <%= f.error_notification %>
-
-  <%= f.association :ingredient %>
-
   <%= f.input :description %>
+  <%= f.association :ingredient %>
 
   <%= f.button :submit %>
   <% end %>
+
+  <br>
+  <p><%= link_to 'Home', cocktails_path, {class: "btn btn-primary"} %></p>
+  <br>
 </div>
